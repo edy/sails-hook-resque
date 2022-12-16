@@ -7,7 +7,8 @@
     "isHook": true
   },
   "scripts": {
-    "test": "NODE_ENV=test node ./node_modules/mocha/bin/mocha"
+    "test": "NODE_ENV=test node ./node_modules/mocha/bin/mocha",
+    "release": "release-it --no-git.requireCleanWorkingDir"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "chai": "^4.1.2",
     "chance": "^1.0.13",
     "mocha": "^5.1.1",
+    "release-it": "^15.5.1",
     "sails": "^1.0.1",
     "sinon": "^4.5.0"
   }
