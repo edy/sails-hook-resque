@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "NODE_ENV=test node ./node_modules/mocha/bin/mocha",
+    "test:unit": "NODE_ENV=test node ./node_modules/mocha/bin/mocha --opts /dev/null test/unit/*.test.js",
     "release": "release-it --no-git.requireCleanWorkingDir"
   },
   "repository": {

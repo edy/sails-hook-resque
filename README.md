@@ -6,6 +6,25 @@ Delayed tasks in Sails.js app. Using node-resque
 ## Configuration
 All configuration options are available in [lib/defaults.js](lib/defaults.js)
 
+`stuckWorkerTimeout` is passed to the node-resque scheduler. It controls the
+maximum age of a worker's heartbeat in milliseconds, not its job runtime.
+The default remains one hour; use `false` to disable automatic cleanup.
+
+```javascript
+// config/resque.js
+module.exports.resque = {
+  stuckWorkerTimeout: 5 * 60 * 1000
+};
+```
+
+Cleanup requires a running scheduler. A worker classified as stuck is removed
+from the registry and its current job, if any, is moved to the failed queue.
+This option does not add startup cleanup or change shutdown behavior.
+
+## Tests
+Run `npm run test:unit` for isolated tests without Redis or a Sails application.
+The existing `npm test` suite also boots Sails and uses Redis.
+
 ## Queue usage
 Hook setup queue service in your Sails.js application
 
