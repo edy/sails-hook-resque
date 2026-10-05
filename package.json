@@ -1,6 +1,6 @@
 {
   "name": "@edy/sails-hook-resque",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "Resque support for sails.js v1.0",
   "main": "index.js",
   "sails": {
